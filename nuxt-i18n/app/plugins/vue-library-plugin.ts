@@ -1,8 +1,11 @@
 import {setLibraryLocale} from "vue-library";
+import type {Composer} from "vue-i18n";
 
 export default defineNuxtPlugin((nuxtApp) => {
-    setLibraryLocale(useNuxtApp().$i18n.locale.value);
-    nuxtApp.hook('i18n:localeSwitched', ({ newLocale }) => {
-        setLibraryLocale(newLocale);
-    });
+  const i18n = nuxtApp.$i18n as Composer
+  const locale = i18n.locale
+
+  watch(locale, (newLocale) => {
+    setLibraryLocale(newLocale)
+  }, { immediate: true });
 });
