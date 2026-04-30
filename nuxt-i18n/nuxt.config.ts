@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    compatibilityDate: '2025-07-15',
-    devtools: { enabled: true },
-    modules: ['@nuxtjs/i18n'],
-    i18n: {
-        defaultLocale: 'de',
-        strategy: 'prefix_and_default',
-        locales: [
-            { code: 'de', name: 'Deutsch', file: 'de.json' },
-            { code: 'en', name: 'English', file: 'en.json' }
-        ]
-    },
+  compatibilityDate: '2025-07-15',
+  devtools: {enabled: true},
+  modules: ['@nuxtjs/i18n'],
+  i18n: {
+    defaultLocale: 'de',
+    strategy: 'prefix_and_default',
+    locales: [
+      {code: 'de', name: 'Deutsch'},
+      {code: 'en', name: 'English'}
+    ]
+  },
 })
