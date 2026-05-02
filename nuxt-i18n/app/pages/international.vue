@@ -5,7 +5,7 @@
     switch library lang
   </button>
   <button @click="switchLang">
-    switch library lang
+    switch frontend lang
   </button>
 </template>
 

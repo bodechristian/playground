@@ -1,7 +1,7 @@
 <template>
-  <p>{{ $t('helloWorld') }}</p>
+  <p>{{ someFunc() }}</p>
 </template>
 
 <script setup lang="ts">
-useI18n();
+import someFunc from "~/components/someFunc";
 </script>
