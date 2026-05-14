@@ -6,7 +6,7 @@ describe('HelloComponent', () => {
   it('renders the translated hello world message',  () => {
     const wrapper = mount(HelloComponent)
 
-    expect(wrapper.text()).toMatch('helloWorld')
+    expect(wrapper.text()).toMatch('Hallo Welt!')
   })
 
   it('mounts successfully', async () => {
