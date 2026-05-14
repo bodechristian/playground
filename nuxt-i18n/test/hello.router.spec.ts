@@ -7,7 +7,11 @@ import {useRouter} from "nuxt/app";
 
 describe('HelloComponent (router-aware)', () => {
   // ❌ TOP-LEVEL composable call — the thing that breaks in v4
-  const router = useRouter()
+  let router;
+
+  beforeAll(() => {
+    router = useRouter();
+  })
 
   it('is mounted at the root path', async () => {
     const wrapper = await mountSuspended(HelloComponent)
