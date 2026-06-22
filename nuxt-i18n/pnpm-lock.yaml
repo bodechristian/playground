@@ -16,7 +16,7 @@ importers:
         version: 4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@parcel/watcher@2.5.6)(@types/node@25.7.0)(@vue/compiler-sfc@3.5.33)(cac@6.7.14)(db0@0.3.4)(eslint@10.3.0(jiti@2.6.1))(ioredis@5.10.1)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.60.2))(rollup@4.60.2)(srvx@0.11.15)(terser@5.46.2)(typescript@5.9.3)(vite@7.3.2(@types/node@25.7.0)(jiti@2.6.1)(terser@5.46.2)(yaml@2.8.4))(yaml@2.8.4)
       vue-library:
         specifier: file:../vue-library
-        version: file:../vue-library(vue@3.5.33(typescript@5.9.3))
+        version: file:../vue-library(highcharts@13.0.0)(vue@3.5.33(typescript@5.9.3))
     devDependencies:
       '@nuxt/test-utils':
         specifier: ^4.0.2
@@ -2972,6 +2972,17 @@ packages:
     resolution: {integrity: sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==}
     engines: {node: '>= 0.4'}
 
+  highcharts@13.0.0:
+    resolution: {integrity: sha512-AoFXei9hSnVXo8X5PmXzSiNXwPMgA+NzyN35uRRy0N1XwbJbRI1laTCaaFci9QB9Wyv9ZFWlgF0xzgivavJpDA==}
+    peerDependencies:
+      jspdf: ^4.1.0
+      svg2pdf.js: ^2.7.0
+    peerDependenciesMeta:
+      jspdf:
+        optional: true
+      svg2pdf.js:
+        optional: true
+
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
 
@@ -4413,6 +4424,7 @@ packages:
     resolution: {directory: ../vue-library, type: directory}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
+      highcharts: ^13.0.0
       vue: ^3.5.0
 
   vue-router@4.6.4:
@@ -7363,6 +7375,8 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  highcharts@13.0.0: {}
+
   hookable@5.5.3: {}
 
   hookable@6.1.1: {}
@@ -9055,8 +9069,9 @@ snapshots:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.33(typescript@5.9.3)
 
-  vue-library@file:../vue-library(vue@3.5.33(typescript@5.9.3)):
+  vue-library@file:../vue-library(highcharts@13.0.0)(vue@3.5.33(typescript@5.9.3)):
     dependencies:
+      highcharts: 13.0.0
       vue: 3.5.33(typescript@5.9.3)
 
   vue-router@4.6.4(vue@3.5.33(typescript@5.9.3)):
