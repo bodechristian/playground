@@ -1,10 +1,10 @@
 <template>
-  <h1>{{ $t('hello') }}</h1>
-  <LibraryComponent></LibraryComponent>
-  <button @click="switchLibLang">
+  <h1 data-testid="main-heading">{{ $t('hello') }}</h1>
+  <LibraryComponent data-testid="lib-component"></LibraryComponent>
+  <button data-testid="switchLang__lib" @click="switchLibLang">
     switch library lang
   </button>
-  <button @click="switchLang">
+  <button data-testid="switchLang__fe" @click="switchLang">
     switch frontend lang
   </button>
 </template>
