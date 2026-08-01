@@ -1,0 +1,63 @@
+name: PR Build
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  vue-library:
+    name: Build vue-library
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: vue-library/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: vue-library
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        working-directory: vue-library
+        run: pnpm build
+
+
+  nuxt-i18n:
+    name: Build nuxt-i18n
+    runs-on: ubuntu-latest
+    needs: vue-library
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: nuxt-i18n/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: nuxt-i18n
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        working-directory: nuxt-i18n
+        run: pnpm build
