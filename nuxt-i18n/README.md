@@ -1,75 +1,36 @@
-# Nuxt Minimal Starter
+# Project
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## pnpm updates & fixing vulnerabilities
 
-## Setup
+### Context
 
-Make sure to install dependencies:
+`minimumReleaseAge` was introduced to pnpm 10 in september 2025, pnpm 11 made it opt-out. \
+`pnpm update` updates all dependencies within the defined semver and ***<u>respects</u>*** the `minimumReleaseAge`. \
+Renovate bot also uses a minimum age. Optimally, these ages are the same.
 
-```bash
-# npm
-npm install
+pnpm 11 also came with a new audit feature, aimed at improving the old workflow of: \
+Override transitive deps → install → remove override \
+It changes those deps directly in the lockfile with `pnpm audit --fix update`
 
-# pnpm
-pnpm install
+### Dependency Duty
 
-# yarn
-yarn install
+Workflow Minors/Patches:
+- `pnpm update` For updating within semver (minor/patches)
+- `pnpm build`, `pnpm dev` Make sure application still builds / runs
+  - If build/dev does not run anymore afterward, check what dependency throws the error
+  - Fix it or revert it and handle it later separately.
 
-# bun
-bun install
-```
+Workflow Majors:
+- `pnpm outdated` Major updates are marked in red
+- Check changelogs online / in renovate MR
+- Judge changes, potentially apply fix, update
+- if not possible, bring to backlog
 
-## Development Server
 
-Start the development server on `http://localhost:3000`:
+### Vulnerabilities
 
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Workflow:
+- `pnpm audit` Check if there are vulnerabilities
+- `pnpm update` Are they fixed by just updating?
+- `pnpm audit --fix update` If not, fix transitive ones directly in pnpm-lock (override)
+- `pnpm build`, `pnpm dev` Make sure application still builds / runs

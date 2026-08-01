@@ -12,16 +12,16 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@nuxtjs/i18n": "10.2.1",
-    "nuxt": "4.4.2",
-    "vue-library": "file:../vue-library"
+    "@nuxtjs/i18n": "^10.5.0",
+    "nuxt": "^4.5.0",
+    "vue-library": "file:..\\vue-library"
   },
   "devDependencies": {
-    "@nuxt/test-utils": "^4.0.2",
-    "@playwright/test": "^1.60.0",
-    "@types/node": "^25.7.0",
+    "@nuxt/test-utils": "^4.0.3",
+    "@playwright/test": "^1.62.0",
+    "@types/node": "^25.9.5",
     "@vue/test-utils": "2.4.6",
     "happy-dom": "20.8.9",
-    "vitest": "^4.1.6"
+    "vitest": "^4.1.10"
   }
 }
