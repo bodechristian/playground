@@ -21,15 +21,15 @@
     "preview": "vite preview"
   },
   "peerDependencies": {
-    "vue": "^3.5.0",
+    "vue": "^3.5.40",
     "highcharts": "^13.0.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.3",
-    "typescript": "^5.6.3",
-    "vite": "^7.3.1",
-    "vite-plugin-vue-devtools": "^8.0.5",
-    "vue-tsc": "^2.2.4",
-    "vue-i18n": "^11.2.8"
+    "@vitejs/plugin-vue": "^6.0.8",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.6",
+    "vite-plugin-vue-devtools": "^8.2.1",
+    "vue-tsc": "^2.2.12",
+    "vue-i18n": "^11.4.7"
   }
 }
