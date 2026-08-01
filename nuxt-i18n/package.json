@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxtjs/i18n": "^10.5.0",
     "nuxt": "^4.5.0",
-    "vue-library": "file:..\\vue-library"
+    "vue-library": "file:../vue-library"
   },
   "devDependencies": {
     "@nuxt/test-utils": "^4.0.3",
